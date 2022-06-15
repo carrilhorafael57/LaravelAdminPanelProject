@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\CategoryController;
+use App\Models\Category;
+use App\Models\Post;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,10 +20,23 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+//creating a group of logged user in order to access the dashboard for editing
+Route::group(['middleware' => ['auth']], function () {
+    Route::get('/dashboard', function () {
 
-Route::resource('categories', \App\Http\Controllers\CategoryController::class);
-    
+        $posts = Post::all();
+
+        return view('dashboard', compact('posts'));
+    })->name('dashboard');
+
+    Route::group(['middleware' => 'is_admin'], function () {
+        Route::resource('categories', \App\Http\Controllers\CategoryController::class);
+        Route::resource('posts', \App\Http\Controllers\PostController::class);
+    });
+});
+
+
+
+
+
 require __DIR__ . '/auth.php';
