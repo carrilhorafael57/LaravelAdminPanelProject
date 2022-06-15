@@ -10,4 +10,11 @@ class Post extends Model
     use HasFactory;
 
     protected $fillable = ['title', 'post_text', 'category_id'];
+
+
+    //make post have access to its category as a relationship
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
+    }
 }

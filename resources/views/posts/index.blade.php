@@ -16,13 +16,14 @@
                         <thead>
                             <tr>
                                 <th>Title</th>
-                                <th></th>
+                                <th>Category</th>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach ($posts as $post)
                                 <tr>
                                    <td > {{$post->title}} </td>
+                                   <td>{{ $post->category->name }}</td>
                                    <td style="padding-left: 10px">
                                     <div class="px-10 w-100 bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow text-center"> 
                                         <button>
