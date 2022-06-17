@@ -6,7 +6,7 @@ use Illuminate\Foundation\Http\FormRequest;
 class StorePostRequest extends FormRequest
 {
     /**
-     * Determine if the user is authorized to make this request.
+     * Determine if the user is auhorized to make this request.
      *
      * @return bool
      */
@@ -37,4 +37,5 @@ class StorePostRequest extends FormRequest
                 'category_id.exists' => "Category does not exist!"
             ];
     }
+  
 }
