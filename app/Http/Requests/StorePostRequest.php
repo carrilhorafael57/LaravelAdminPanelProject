@@ -17,7 +17,7 @@ class StorePostRequest extends FormRequest
     }
 
     /**
-     * Get the validation rules that appy to the request.
+     * Get the validation rules that apply to the request.
      *
      * @return array<string, mixed>
      */
