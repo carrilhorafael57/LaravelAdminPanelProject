@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Requests;
+
 use Illuminate\Foundation\Http\FormRequest;
 
 class StorePostRequest extends FormRequest
@@ -16,7 +17,7 @@ class StorePostRequest extends FormRequest
     }
 
     /**
-     * Get the validation rules that apply to the request.
+     * Get the validation rules that appy to the request.
      *
      * @return array<string, mixed>
      */
@@ -37,5 +38,4 @@ class StorePostRequest extends FormRequest
                 'category_id.exists' => "Category does not exist!"
             ];
     }
-  
 }
