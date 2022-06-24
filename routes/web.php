@@ -20,7 +20,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-//creating a group of logged user in order to access the dashboard for editing
+//creating a group of logged user in order to access the dashboard for edting
 Route::group(['middleware' => ['auth']], function () {
     Route::get('/dashboard', function () {
 
