@@ -24,7 +24,7 @@ Route::get('/', function () {
 Route::group(['middleware' => ['auth']], function () {
     Route::get('/dashboard', function () {
 
-        $posts = Post::all();
+        $post = Post::all();
 
         return view('dashboard', compact('posts'));
     })->name('dashboard');
